@@ -1,8 +1,23 @@
 # szczur media bar
 
 Własny, animowany pasek muzyczny nad innymi aplikacjami (styl Samsung Now Bar) dla **Motorola Edge 70 Max, Android 16+**.
+Aplikacja może działać na innych urządzeniach ale nie testowałem tego. Daj znać na TikToku jeśli działa na innych telefonach. 
 Steruje istniejącą sesją multimedialną (YouTube Music, a w przyszłości Spotify/Tidal – kod nie zależy od pakietu aplikacji).
 Bez roota, bez Accessibility, bez zewnętrznych serwerów.
+
+## Screenshoty
+
+### Forma Compact (Standard)
+![Standard](screenshots/standard.jpg)
+
+### Forma Compact (Slim)
+![Slim](screenshots/slim.jpg)
+
+### Forma Compact (Bubble)
+![Bubble](screenshots/bubble.jpg)
+
+### Forma Roszszerzona
+![Expand](screenshots/expand.jpg)
 
 ## Wersje
 
