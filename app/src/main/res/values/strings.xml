@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">szczur media bar</string>
+    <string name="listener_label">szczur media bar – sesje multimedialne</string>
+    <string name="tile_label">szczur media bar</string>
+    <string name="tile_on">Widoczny</string>
+    <string name="tile_off">Ukryty</string>
+    <string name="tile_setup">Wymaga konfiguracji</string>
+    <string name="unknown_title">Nieznany utwór</string>
+    <string name="unknown_artist">Nieznany wykonawca</string>
+</resources>
