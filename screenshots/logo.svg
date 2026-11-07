@@ -1,13 +1,6 @@
 <svg xmlns="http://w3.org" viewBox="18 18 72 72" width="128" height="128">
-  <!-- Ciemne tło ikony (ic_launcher_background) z zaokrąglonymi rogami -->
   <rect x="18" y="18" width="72" height="72" rx="18" fill="#15151B" />
-  
-  <!-- Biała pastylka -->
   <path fill="#F2F2F7" d="M42,42 h24 a12,12 0 0 1 0,24 h-24 a12,12 0 0 1 0,-24 z" />
-  
-  <!-- Fioletowe kółko -->
   <path fill="#7C5CFF" d="M42,46.5 a7.5,7.5 0 1 0 0.01,0 z" />
-  
-  <!-- Trzy słupki equalizera -->
   <path fill="#7C5CFF" d="M60,57 h2 v5 h-2 z M63.5,52 h2 v10 h-2 z M67,55 h2 v7 h-2 z" />
 </svg>
