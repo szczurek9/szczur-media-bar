@@ -1,4 +1,9 @@
-# szczur media bar
+<div align="center">
+  <img src="screenshots/smblogo.png" alt="Szczur Media Bar Logo" width="120" height="120">
+  
+  <h1>szczur media bar</h1>
+</div>
+
 
 Własny, animowany pasek muzyczny nad innymi aplikacjami (styl Samsung Now Bar) dla **Motorola Edge 70 Max, Android 16+**.
 Aplikacja może działać na innych urządzeniach ale nie testowałem tego. Daj znać na TikToku jeśli działa na innych telefonach. 
@@ -7,17 +12,13 @@ Bez roota, bez Accessibility, bez zewnętrznych serwerów.
 
 ## Screenshoty
 
-### Forma Compact (Standard)
-![Standard](screenshots/standard.jpg)
+| Tryb | Podgląd |
+| :--- | :---: |
+| **Forma Compact (Standard)**<br>Wyświetla okładkę, tytuł, wykonawcę oraz animację wizualizera. | <img src="screenshots/standard.jpg" alt="Standard" width="320" /> |
+| **Forma Compact (Slim)**<br>Minimalistyczny pasek z ikoną aplikacji oraz tytułem utworu. | <img src="screenshots/slim.jpg" alt="Slim" width="320" /> |
+| **Forma Compact (Bubble)**<br>Kompaktowy bąbelek z okładką albumu i wizualizerem. | <img src="screenshots/bubble.jpg" alt="Bubble" width="320" /> |
+| **Forma Rozszerzona**<br>Pełny panel sterowania z paskiem postępu i przyciskami odtwarzacza. | <img src="screenshots/expand.jpg" alt="Forma Rozszerzona" width="320" /> |
 
-### Forma Compact (Slim)
-![Slim](screenshots/slim.jpg)
-
-### Forma Compact (Bubble)
-![Bubble](screenshots/bubble.jpg)
-
-### Forma Roszszerzona
-![Expand](screenshots/expand.jpg)
 
 ## Wersje
 
