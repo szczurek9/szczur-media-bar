@@ -175,6 +175,19 @@ private fun SettingsContent(prefs: PreferencesRepository, refreshTick: Int) {
             }
         }
 
+        SectionCard("Przypomnienia (szczur reminder)") {
+            SwitchRow(
+                "Przyjmuj przypomnienia",
+                "Pasek pokazuje przypomnienia z aplikacji szczur reminder (też bez grającej muzyki). Wymaga uprawnienia „Wyświetlanie nad innymi aplikacjami” i aktywnego dostępu do powiadomień. Na ekranie blokady przypomnienie pojawia się jako zwykłe powiadomienie.",
+                s.acceptReminders,
+            ) { scope.launch { prefs.put(SettingKeys.ACCEPT_REMINDERS, it) } }
+            Text(
+                "Czas wyświetlania, interwały „Przypomnij później” i wygląd kart ustawia się w szczur reminder; rozmiar, motyw, przezroczystość i pozycja pochodzą z ustawień powyżej.",
+                style = MaterialTheme.typography.bodySmall,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+            )
+        }
+
         if (controller != null) DiagnosticsCard(controller)
     }
 }

@@ -2,6 +2,7 @@ package com.szczurek9.mediabar
 
 import android.app.Application
 import com.szczurek9.mediabar.overlay.MusicOverlayController
+import com.szczurek9.mediabar.reminder.ReminderOverlayController
 import com.szczurek9.mediabar.settings.PreferencesRepository
 
 class MusicBarApp : Application() {
@@ -11,4 +12,8 @@ class MusicBarApp : Application() {
     /** Ustawiany przez MusicNotificationListener, dopóki serwis jest połączony. */
     @Volatile
     var overlayController: MusicOverlayController? = null
+
+    /** Okno przypomnień ze Szczur Reminder; ustawiane razem z [overlayController]. */
+    @Volatile
+    var reminderController: ReminderOverlayController? = null
 }

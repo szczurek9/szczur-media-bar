@@ -2,6 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <!-- Integracja ze Szczur Reminder: tylko aplikacje podpisane tym samym kluczem mogą się podpiąć pod serwis mostu. -->
+    <permission
+        android:name="com.szczurek9.mediabar.permission.REMINDER_BRIDGE"
+        android:protectionLevel="signature" />
+
     <!-- Wyświetlanie panelu nad innymi aplikacjami (użytkownik przyznaje ręcznie). -->
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
 
@@ -49,6 +54,16 @@
             android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE">
             <intent-filter>
                 <action android:name="android.service.notification.NotificationListenerService" />
+            </intent-filter>
+        </service>
+
+        <!-- Most Szczur Reminder -> Media Bar (Messenger, protokół v1). Dostęp: uprawnienie signature. -->
+        <service
+            android:name=".integration.ReminderBridgeService"
+            android:exported="true"
+            android:permission="com.szczurek9.mediabar.permission.REMINDER_BRIDGE">
+            <intent-filter>
+                <action android:name="com.szczurek9.mediabar.action.REMINDER_BRIDGE" />
             </intent-filter>
         </service>
 

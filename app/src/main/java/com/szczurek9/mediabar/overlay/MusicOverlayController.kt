@@ -92,6 +92,8 @@ class MusicOverlayController(
     private var attached = false
     private var hiddenByUser = false
     private var pauseExpired = false
+    /** Szczur Reminder pokazuje własny pasek – pasek muzyczny na ten czas ustępuje miejsca. */
+    private var reminderActive = false
     private var pauseJob: Job? = null
     private var removeJob: Job? = null
     private var collapseJob: Job? = null
@@ -162,6 +164,13 @@ class MusicOverlayController(
 
     fun onConfigurationChanged() {
         container.post { applyLayout() }
+    }
+
+    /** Wywoływane przez ReminderOverlayController (główny wątek). */
+    fun setReminderActive(active: Boolean) {
+        if (reminderActive == active) return
+        reminderActive = active
+        evaluate()
     }
 
     // ---- Dla kafelka i ekranu ustawień ----
@@ -383,7 +392,7 @@ class MusicOverlayController(
         if (!settingsLoaded) return
         val s = settings
         val inPlayerApp = s.hideInPlayerApp && np.packageName != null && foregroundPkg == np.packageName
-        val allowed = s.enabled && np.hasSession && !hiddenByUser && !inPlayerApp && when {
+        val allowed = s.enabled && np.hasSession && !hiddenByUser && !inPlayerApp && !reminderActive && when {
             np.isPlaying -> true
             else -> when (s.afterStop) {
                 AfterStop.KEEP -> true

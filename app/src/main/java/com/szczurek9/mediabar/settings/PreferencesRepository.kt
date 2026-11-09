@@ -35,6 +35,7 @@ object SettingKeys {
     val AUTO_SHOW = booleanPreferencesKey("auto_show")
     val AFTER_STOP = stringPreferencesKey("after_stop")
     val HIDE_DELAY = intPreferencesKey("hide_delay_sec")
+    val ACCEPT_REMINDERS = booleanPreferencesKey("accept_reminders")
 }
 
 class PreferencesRepository(context: Context) {
@@ -91,5 +92,6 @@ private fun Preferences.toSettings(): BarSettings {
         autoShow = this[SettingKeys.AUTO_SHOW] ?: d.autoShow,
         afterStop = enumOr(this[SettingKeys.AFTER_STOP], d.afterStop),
         hideDelaySec = (this[SettingKeys.HIDE_DELAY] ?: d.hideDelaySec).coerceIn(5, 120),
+        acceptReminders = this[SettingKeys.ACCEPT_REMINDERS] ?: d.acceptReminders,
     )
 }

@@ -37,4 +37,6 @@ data class BarSettings(
     val hideDelaySec: Int = 20,
     /** Ukrywaj pasek, gdy na ekranie jest aplikacja, z której gra muzyka (wymaga dostępu do danych o użyciu). */
     val hideInPlayerApp: Boolean = true,
+    /** Przyjmuj przypomnienia ze Szczur Reminder (niezależnie od głównego przełącznika paska muzycznego). */
+    val acceptReminders: Boolean = true,
 )

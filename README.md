@@ -10,6 +10,8 @@ Aplikacja może działać na innych urządzeniach ale nie testowałem tego. Daj 
 Steruje istniejącą sesją multimedialną (YouTube Music, a w przyszłości Spotify/Tidal – kod nie zależy od pakietu aplikacji).
 Bez roota, bez Accessibility, bez zewnętrznych serwerów.
 
+**Nowość w 1.1.0:** pasek potrafi też pokazywać przypomnienia z aplikacji [Szczur Reminder](https://github.com/szczurek9/szczur-reminder) – kompaktowa karta, po dotknięciu rozwinięcie z opisem (Markdown) i przyciskami „Wykonane” oraz „Przypomnij później”. Działa też bez grającej muzyki. Szczegóły: [docs/REMINDER_INTEGRATION.md](docs/REMINDER_INTEGRATION.md).
+
 ## Screenshoty
 
 | Tryb | Podgląd |
@@ -24,6 +26,7 @@ Bez roota, bez Accessibility, bez zewnętrznych serwerów.
 
 | Element | Wersja |
 |---|---|
+| Wersja aplikacji | 1.1.0 (versionCode 2) |
 | minSdk / targetSdk / compileSdk | 36 / 36 / 36 (Android 16) |
 | Android Gradle Plugin | 8.13.0 |
 | Gradle | 8.13 |
@@ -58,6 +61,13 @@ app/src/main/java/com/szczurek9/mediabar/
 │   ├── BarSettings.kt                Model ustawień
 │   ├── PreferencesRepository.kt      DataStore
 │   └── MusicBarSettings.kt           Ekran ustawień (Compose)
+├── integration/                      Most dla Szczur Reminder (od 1.1.0)
+│   ├── ReminderBridgeService.kt      Serwis Messenger chroniony uprawnieniem signature
+│   └── ReminderProtocol.kt           Stałe protokołu v1 + model karty przypomnienia
+├── reminder/                         Wyświetlanie przypomnień (osobne okno nakładki)
+│   ├── ReminderOverlayController.kt  Okno WindowManager, czas pokazania, akcje (PendingIntent)
+│   ├── ReminderBar.kt                Karta kompaktowa i rozwinięta (Compose)
+│   └── MarkdownText.kt               Bezpieczny podzbiór Markdowna
 ├── foreground/ForegroundAppDetector.kt  Aplikacja na ekranie (UsageStatsManager) – auto-ukrywanie
 ├── permissions/PermissionManager.kt  Sprawdzanie uprawnień i przejścia do ustawień Androida
 └── tile/MusicBarTileService.kt       Kafelek szybkich ustawień (ukryj/pokaż pasek)
@@ -76,6 +86,7 @@ app/src/main/java/com/szczurek9/mediabar/
 * Długie przytrzymanie małego paska albo „X” w panelu – tymczasowe ukrycie. Pasek wraca przy następnym utworze/wznowieniu (opcja „Pokazuj automatycznie”), z kafelka szybkich ustawień albo przyciskiem „Pokaż pasek” w aplikacji.
 * Pasek widać tylko gdy jest sesja multimedialna; po pauzie zachowuje się według ustawienia „Po zatrzymaniu muzyki”.
 * Nakładka nie jest pokazywana na ekranie blokady (ograniczenie Androida) – wraca po odblokowaniu.
+* Przypomnienie ze Szczur Reminder: dotknięcie karty – rozwija, długie przytrzymanie – zamyka, dotknięcie poza rozwiniętą kartą – zamyka. Na czas przypomnienia pasek muzyczny chowa się i wraca po jego zniknięciu. Przełącznik „Przyjmuj przypomnienia” jest w ustawieniach aplikacji.
 
 ## Formy i opcje
 
