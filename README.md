@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="screenshots/smblogo.png" alt="Szczur Media Bar Logo" width="120" height="120">
+  <img src="screenshots/logo.svg" alt="Szczur Media Bar Logo" width="120" height="120">
   
   <h1>szczur media bar</h1>
 </div>
